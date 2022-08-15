@@ -1,25 +1,10 @@
-import {
-  View,
-  Text,
-  SafeAreaView,
-  TouchableOpacity,
-  Image,
-  ScrollView,
-  Dimensions,
-  FlatList,
-} from 'react-native';
-import React, {useEffect, useState} from 'react';
+import {View, Text, Image, ScrollView, FlatList} from 'react-native';
+import React from 'react';
 import styles from './style';
-import {
-  TextColor,
-  TextHeading,
-  TextPara,
-  TextTitle,
-} from '../../constants/Text';
+import {TextColor, TextHeading, TextTitle} from '../../constants/Text';
 
 const MovieDtl = ({navigation, route}) => {
   return (
-    // {route.params.movieSelected.Title}
     <View style={styles.container}>
       <View>
         <Image

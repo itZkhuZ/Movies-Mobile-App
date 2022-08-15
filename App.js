@@ -1,22 +1,23 @@
+//App Imports
 import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import AllMovies from './screens/AllMovies/AllMovies';
-import MovieDtl from './screens/MovieDtl/MovieDtl';
-import {StatusBar, Button} from 'react-native';
 import {initializeApp} from 'firebase/app';
 import {getDatabase} from 'firebase/database';
+
+//Ui Imports
+import {StatusBar} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {TextColor} from './constants/Text';
 import Colors from './constants/Colors';
 
+//Screen Imports
+import AllMovies from './screens/AllMovies/AllMovies';
+import MovieDtl from './screens/MovieDtl/MovieDtl';
+
 const Stack = createNativeStackNavigator();
 
-function App({navigation}) {
-  const headerOpt = {
-    headerTransparent: true,
-  };
-
+function App() {
   const firebaseConfig = {
     apiKey: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
     authDomain: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
@@ -48,7 +49,7 @@ function App({navigation}) {
                   color={TextColor.color}
                 />
               ),
-              headerRight: ({navigation}) => (
+              headerRight: () => (
                 <Icon name="search-outline" size={32} color={TextColor.color} />
               ),
               headerTitleAlign: 'center',

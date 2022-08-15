@@ -1,27 +1,16 @@
-import {
-  View,
-  Text,
-  SafeAreaView,
-  TouchableOpacity,
-  Image,
-  ScrollView,
-  Dimensions,
-  StatusBar,
-} from 'react-native';
+import {View, Text, ScrollView} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import styles from './style';
 import {TextColor, TextTitle} from '../../constants/Text';
-import {getDatabase, ref, child, get, push, set} from 'firebase/database';
+import {getDatabase, ref, child, get} from 'firebase/database';
 import {
   LargeCards,
   NormalCards,
   StretchedCards,
 } from '../../components/MoviesCard.js';
-import Icon from 'react-native-vector-icons/Ionicons';
 
 const AllMovies = ({navigation}) => {
   const [Movies, setMovies] = useState({});
-  const [carouselMovies, setCarouselMovies] = useState([]);
 
   useEffect(() => {
     dataGet();
@@ -53,7 +42,6 @@ const AllMovies = ({navigation}) => {
         <Text></Text>
         <ScrollView
           horizontal
-          // contentContainerStyle={{alignItems: 'center'}}
           style={{height: '100%'}}
           showsHorizontalScrollIndicator={false}
           snapToAlignment={'center'}
